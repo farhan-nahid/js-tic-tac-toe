@@ -13,6 +13,7 @@ const oSymbol = "○";
 
 let gameIsLive = true;
 let xIsNext = true;
+
 //functions
 
 const letterToSymbol = (letter) => (letter === "x" ? xSymbol : oSymbol);
