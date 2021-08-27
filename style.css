@@ -145,6 +145,21 @@ h1 {
   color: var(--red-color);
 }
 
+footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+footer p {
+  color: var(--white-color);
+  word-spacing: 3px;
+}
+
+footer p a {
+  color: var(--red-color);
+  font-weight: 800;
+}
+
 @media only screen and (max-width: 600px) {
   h1 {
     font-size: 25px;
