@@ -13,15 +13,12 @@ const oSymbol = "○";
 
 let gameIsLive = true;
 let xIsNext = true;
-let winner = null;
-
 //functions
 
 const letterToSymbol = (letter) => (letter === "x" ? xSymbol : oSymbol);
 
 const handleWin = (letter) => {
   gameIsLive = false;
-  winner = letter;
   if (letter === "x") {
     statusArea.innerHTML = `${letter} Has Won!!`;
   } else {
@@ -44,56 +41,56 @@ const checkGameStatus = () => {
 
   if (topLeft && topLeft === topMiddle && topLeft === topRight) {
     handleWin(topLeft);
-    gameCeils[0].classList.add('won')
-    gameCeils[1].classList.add('won')
-    gameCeils[2].classList.add('won')
+    gameCeils[0].classList.add("won");
+    gameCeils[1].classList.add("won");
+    gameCeils[2].classList.add("won");
   } else if (
     middleLeft &&
     middleLeft === middleMiddle &&
     middleLeft === middleRight
   ) {
     handleWin(middleLeft);
-    gameCeils[3].classList.add('won')
-    gameCeils[4].classList.add('won')
-    gameCeils[5].classList.add('won')
+    gameCeils[3].classList.add("won");
+    gameCeils[4].classList.add("won");
+    gameCeils[5].classList.add("won");
   } else if (
     bottomLeft &&
     bottomLeft === bottomMiddle &&
     bottomLeft === bottomRight
   ) {
     handleWin(bottomLeft);
-    gameCeils[6].classList.add('won')
-    gameCeils[7].classList.add('won')
-    gameCeils[8].classList.add('won')
+    gameCeils[6].classList.add("won");
+    gameCeils[7].classList.add("won");
+    gameCeils[8].classList.add("won");
   } else if (topLeft && topLeft === middleLeft && topLeft === bottomLeft) {
     handleWin(topLeft);
-    gameCeils[0].classList.add('won')
-    gameCeils[3].classList.add('won')
-    gameCeils[6].classList.add('won')
+    gameCeils[0].classList.add("won");
+    gameCeils[3].classList.add("won");
+    gameCeils[6].classList.add("won");
   } else if (
     topMiddle &&
     topMiddle === middleMiddle &&
     topMiddle === bottomMiddle
   ) {
     handleWin(topMiddle);
-    gameCeils[1].classList.add('won')
-    gameCeils[4].classList.add('won')
-    gameCeils[7].classList.add('won')
+    gameCeils[1].classList.add("won");
+    gameCeils[4].classList.add("won");
+    gameCeils[7].classList.add("won");
   } else if (topRight && topRight === middleRight && topRight === bottomRight) {
     handleWin(topRight);
-    gameCeils[2].classList.add('won')
-    gameCeils[5].classList.add('won')
-    gameCeils[8].classList.add('won')
+    gameCeils[2].classList.add("won");
+    gameCeils[5].classList.add("won");
+    gameCeils[8].classList.add("won");
   } else if (topLeft && topLeft === middleMiddle && topLeft === bottomRight) {
     handleWin(topLeft);
-    gameCeils[0].classList.add('won')
-    gameCeils[4].classList.add('won')
-    gameCeils[8].classList.add('won')
+    gameCeils[0].classList.add("won");
+    gameCeils[4].classList.add("won");
+    gameCeils[8].classList.add("won");
   } else if (topRight && topRight === middleMiddle && topRight === bottomLeft) {
     handleWin(topRight);
-    gameCeils[2].classList.add('won')
-    gameCeils[4].classList.add('won')
-    gameCeils[6].classList.add('won')
+    gameCeils[2].classList.add("won");
+    gameCeils[4].classList.add("won");
+    gameCeils[6].classList.add("won");
   } else if (
     topLeft &&
     topMiddle &&
@@ -120,20 +117,20 @@ const checkGameStatus = () => {
 // event handlers
 
 const handelReset = () => {
-  winner = null
-  xIsNext =true
+  xIsNext = true;
   statusArea.innerHTML = `${xSymbol} Is Next`;
   for (const ceil of gameCeils) {
-    ceil.classList.remove('x');
-    ceil.classList.remove('o');
-    ceil.classList.remove('won');
+    ceil.classList.remove("x");
+    ceil.classList.remove("o");
+    ceil.classList.remove("won");
   }
+  gameIsLive = true;
 };
 
 const handelCeilChange = (e) => {
   const classList = e.target.classList;
 
-  if (classList[1] === "x" || classList[1] === "o") {
+  if (!gameIsLive || classList[1] === "x" || classList[1] === "o") {
     return;
   }
 
