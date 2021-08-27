@@ -9,7 +9,7 @@
 }
 
 :root {
-  --bg-color: #148dac;
+  --bg-color: #14bdac;
   --dark-color: #0da192;
   --black-color: #545454;
   --white-color: #f2ebd3;
@@ -37,6 +37,7 @@ h1 {
 }
 
 .container {
+  margin-top: 30px;
   padding: 50px;
   border-radius: 25px;
   background-color: var(--bg-color);
@@ -44,4 +45,34 @@ h1 {
 
 .title {
   text-align: center;
+}
+
+.status__action {
+  margin-top: 30px;
+  font-size: 22px;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-around;
+}
+
+.reset:hover {
+  cursor: pointer;
+  color: var(--red-color);
+  transition: color 0.5s ease-in-out;
+}
+
+.tic__tac__toe__grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  background-color: var(--dark-color);
+}
+
+.tic__tac__toe__cell {
+  height: 130px;
+  width: 130px;
+  background-color: var(--bg-color);
+  cursor: pointer;
 }
