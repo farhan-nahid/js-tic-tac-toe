@@ -12,13 +12,13 @@
 
 ### Technology
 
-- [x] HTML5
-- [x] CSS3
-- [x] JavaScript
+- [x] `HTML5`
+- [x] `CSS3`
+- [x] `JavaScript`
 
 ### Tools
 
-- [x] VS CODE
-- [x] Git
-- [x] GitHub
+- [x] `VS CODE`
+- [x] `Git`
+- [x] `GitHub`
 
